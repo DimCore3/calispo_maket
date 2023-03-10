@@ -1,13 +1,17 @@
 .sidebar {
     border: 2px #c4c4c4 solid;
-    // border: 1px #000000 solid;
-    width: 200px;
+    width: 300px;
     min-height: 100px;
+
+    h3 {
+        line-height: 3rem;
+        color:#4d4d4d;
+        border-bottom: 2px #e4c69e solid;
+    }
 }
 
 .parameters {
     width: 100%;
-    color:#c4c4c4;
     vertical-align: middle;
     display: inline;
     line-height: 2rem;

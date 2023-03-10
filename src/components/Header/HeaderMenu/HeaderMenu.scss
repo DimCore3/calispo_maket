@@ -1,0 +1,39 @@
+@mixin flexEnd() {
+    display: flex;
+    align-items: flex-end;
+}
+
+@keyframes moveUpDown{
+    0% {
+        top: 10px;
+    }
+    100% {
+        top: -10px;
+    }
+}
+
+.full_width_header_menu {
+    width: 100%;
+    border-bottom: 2px #d8d8d8 solid;
+
+    .header_menu {
+        @include flexEnd;
+        justify-content: space-between;
+        padding: 1rem;
+
+        .left_side_header_menu {
+            
+            img {
+                position: relative;
+                animation: moveUpDown 3s ease-in-out 0s infinite alternate;
+                border-radius: 50%;
+                box-shadow: 0 0 13px black;
+            }
+        }
+
+        .right_side_header_menu {
+            @include flexEnd;
+        }
+    }
+}
+

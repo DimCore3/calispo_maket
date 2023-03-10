@@ -1,20 +1,22 @@
 import { useState } from 'react';
-import classes from './dropDownMenu.module.scss'
+import classes from './DropDownHeader.module.scss'
 
-function DropDownMenu({ name, IncludedComponent }) {
+function DropDownHeader({ name, IncludedComponent }) {
     let [isDropListShow, setIsDropListShow] = useState(false)
 
-    return (
+    return ( 
         <div className={isDropListShow ? classes.openedDropDownMenu : classes.closedDropDownMenu}>
             <div onClick={() => isDropListShow = setIsDropListShow(!isDropListShow)} className={classes.titleDropList}>
-                <p>{name}</p>
-                <div className={classes.arrow}><i className={isDropListShow ? classes.arrow_down : classes.arrow_right}></i></div>
+                <h3>{name.toUpperCase()}</h3>
+                <div className={classes.arrow}>
+                    <i className={classes.arrow_down}></i>
+                </div>
             </div>
             <div className={classes.dropList}>
-                {isDropListShow && IncludedComponent}
+                {IncludedComponent}
             </div>
         </div>
-    );
-};
+     );
+}
 
-export default DropDownMenu;
+export default DropDownHeader;

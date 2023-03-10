@@ -1,0 +1,70 @@
+$font-link-size: 0.8rem;
+$font-big-size: 1.5rem;
+@mixin flexEnd() {
+    display: flex;
+    align-items: flex-end;
+}
+.full_width_header_contacts {
+    width: 100%;
+    border-bottom: 2px #d8d8d8 solid;
+}
+
+.header_contacts {
+    @include flexEnd;
+    
+    justify-content: space-between;
+    img {
+        height: $font-link-size;
+        width: $font-link-size;
+        margin: 0 0.5rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: #707070;
+    }
+    
+    div {
+        margin: 0.2rem 0;
+    }
+
+    .header_left_side {
+        @include flexEnd;
+
+        .header_mail {
+            font-size: $font-link-size;
+            @include flexEnd;
+        }
+
+        .header_call {
+            @include flexEnd;
+        }
+
+        .header_phone {
+            font-size: $font-big-size;
+            margin: 0 $font-link-size;
+            @include flexEnd;
+        }
+
+        .header_order_call {
+            button {
+                border-radius: 5px;
+                background-color: #e4c69e;
+                height: $font-big-size;
+                padding-right: 0.5rem;
+                border: none;
+            }
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .header_right_side {
+        @include flexEnd;
+
+        div:hover {
+            cursor: pointer;
+        }
+    }
+}

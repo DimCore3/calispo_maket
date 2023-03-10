@@ -1,22 +1,59 @@
-p {
+@mixin menuOpened() {
+    display: block;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    padding: 5px;
+}
+
+p,
+h3 {
     user-select: none;
 }
 
 .dropList {
+    position: absolute;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    background-color: white;
 }
 
 .closedDropDownMenu {
-    border-bottom: #c4c4c4 1px solid;
     transition: background-color 0.25s ease-in-out;
+
+    i {
+        border: solid #b1b1b1;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+}
+
+.dropList {
+    display: none;
+}
+
+.closedDropDownMenu:hover {
+    .dropList {
+        @include menuOpened;
+    }
+    h3 {
+        color: #e4c69e;
+    }
+    i {
+        border: solid #e4c69e;
+    }
 }
 
 .openedDropDownMenu {
-    background-color: #e4c69e;
-    border: 2px #e4c69e solid;
+    .dropList {
+        @include menuOpened;
+    }
+    h3 {
+        color: #e4c69e;
+    }
+    div i {
+        border: solid #e4c69e;
+    }
     transition: background-color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
 
@@ -25,22 +62,18 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 0.5rem;
+    h3 {
+        font-weight: 400;
+    }
 
     .arrow {
-        background-color: rgb(255, 255, 255);
+        background-color: #ffffff;
         border-radius: 50%;
         height: 1rem;
         width: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
-
-        i {
-            border: solid #b1b1b1;
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 3px;
-        }
 
         .arrow_right {
             transform: rotate(-45deg);
