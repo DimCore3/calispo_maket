@@ -43,7 +43,9 @@ function Sidebar() {
                     IncludedComponent={<ListMenu slug={element.slug} />}
                 />
             )}
-            <h3>Подбор параметров</h3>
+            <div className="parameter_title">
+                <h3>Подбор параметров</h3>
+            </div>
             {parametersList.map((element, index) =>
                 <DropDownMenu
                     name={element.name}

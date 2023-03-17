@@ -1,0 +1,23 @@
+.options_img {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    .option_img {
+        padding: 5px;
+        img {
+            width: 125px;
+            height: 125px;
+        }
+        .text_under_img {
+            width: 125px;
+            text-align: center;
+        }
+    }
+
+    .choosed {
+        border: 2px rgba( rgb(187, 87, 20), 0.3) solid;
+    }
+}

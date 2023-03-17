@@ -2,17 +2,23 @@
     border: 2px #c4c4c4 solid;
     width: 300px;
     min-height: 100px;
+    margin-right: 2rem;
 
-    h3 {
-        line-height: 3rem;
-        color:#4d4d4d;
-        border-bottom: 2px #e4c69e solid;
+    .parameter_title {
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        h3 {
+            line-height: 2rem;
+            width: max-content;
+            color: #4d4d4d;
+            border-bottom: 2px #e4c69e solid;
+        }
     }
 }
 
 .parameters {
     width: 100%;
     vertical-align: middle;
-    display: inline;
     line-height: 2rem;
 }

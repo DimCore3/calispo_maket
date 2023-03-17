@@ -8,17 +8,21 @@
         top: 10px;
     }
     100% {
-        top: -10px;
+        top: 25px;
     }
 }
 
 .full_width_header_menu {
     width: 100%;
-    border-bottom: 2px #d8d8d8 solid;
+    border-bottom: 2px #eeeeee solid;
+    display: flex;
+    justify-content: center;
+    height: 80px;
 
     .header_menu {
         @include flexEnd;
         justify-content: space-between;
+        width: 70%;
         padding: 1rem;
 
         .left_side_header_menu {
@@ -28,6 +32,7 @@
                 animation: moveUpDown 3s ease-in-out 0s infinite alternate;
                 border-radius: 50%;
                 box-shadow: 0 0 13px black;
+                width: 90px;
             }
         }
 

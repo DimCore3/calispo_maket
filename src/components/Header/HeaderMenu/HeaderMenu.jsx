@@ -39,7 +39,7 @@ function HeaderMenu() {
             <div className="header_menu">
                 <div className="left_side_header_menu">
                     <a href="/">
-                        <img width={'100px'} src="img/logo/logo_without_text.png" alt="logo without text" />
+                        <img src="img/logo/logo_without_text.png" alt="logo without text" />
                     </a>
                 </div>
                 <div className="right_side_header_menu">

@@ -1,5 +1,6 @@
 import HeaderContacts from "./HeaderContacts/HeaderContacts";
 import HeaderMenu from "./HeaderMenu/HeaderMenu";
+import HeaderPath from "./HeaderPath/HeaderPath";
 
 function Header() {
 
@@ -7,6 +8,7 @@ function Header() {
         <header className="main_header">
             <HeaderContacts/>
             <HeaderMenu/>
+            <HeaderPath/>            
         </header>
     );
 }

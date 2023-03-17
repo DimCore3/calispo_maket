@@ -1,0 +1,27 @@
+@mixin flexEnd() {
+    display: flex;
+    align-items: flex-end;
+}
+
+.full_width_header_path {
+    width: 100%;
+    border-bottom: 2px #eeeeee solid;
+    display: flex;
+    justify-content: center;
+    background-color: #fdfdfd;
+
+    .header_path {
+        @include flexEnd;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+        padding: 1rem;
+
+        .left_side_header_path {
+            h2 {
+                color: #707070;
+                font-weight: 500;
+            }
+        }
+    }
+}

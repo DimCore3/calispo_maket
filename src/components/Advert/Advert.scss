@@ -1,0 +1,24 @@
+$redTextStyle: #d91a00;
+
+.content_top_advert {
+    background-color: #fff5f5;
+    margin-bottom: 1rem;
+    padding: 30px 25px;
+    .top_advert_title {
+        h3 {
+            text-align: center;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 140%;
+            margin-bottom: 30px;
+            span {
+                color: $redTextStyle;
+            }
+        }
+    }
+    .top_advert_items {
+        display: flex;
+        justify-content: space-around;
+    }
+}
