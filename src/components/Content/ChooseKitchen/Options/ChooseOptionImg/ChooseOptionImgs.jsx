@@ -15,10 +15,20 @@ const ChooseOptionImgs = ({ items, selectedOptions, setSelectedOptions, indexOpe
                     className={'option_img' + (selectedOptions[indexOpenedView] === index ? ' choosed' : '')}
                     onClick={() => setChoiseToList(index)}
                     key={item.slug + '_option_' + index}>
-                    <img src={item.img} alt={item.alt} />
-                    <div className="text_under_img">
-                        <p>{item.name}</p>
-                    </div>
+                    {
+                        item.img !== ''
+                            ?
+                            <div>
+                                <img src={item.img} alt={item.alt} />
+                                <div className="text_under_img">
+                                    <p>{item.name}</p>
+                                </div>
+                            </div>
+                            : 
+                            <div>
+                                <h2>{item.name}</h2>
+                            </div>
+                    }
                 </div>
             )}
         </div>

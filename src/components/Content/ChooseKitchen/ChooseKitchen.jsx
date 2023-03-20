@@ -21,7 +21,13 @@ const ChooseKitchen = () => {
         {
             title: 'Есть ли у вас размеры или проект будущей кухни?',
             options: [
+                { name: 'Да, есть проект', slug: 'thereIsProject', addition: 'file' },
+                { name: 'Есть размеры', slug: 'thereIsSize', addition: 'text' },
+                { name: 'Нет', slug: 'no', addition: '' },
+                { name: 'Просто интересно', slug: 'onlyInteresting', addition: '' },
             ],
+            slug: 'kitchen',
+            img: 'img/chooseKitchenOptions/options_1/kitchen.svg',
         },
         {
             title: 'Выберите общий вид',
@@ -35,8 +41,13 @@ const ChooseKitchen = () => {
         {
             title: 'Выберите фурнитуру',
             options: [
-
+                { name: 'Бюджетный вариант (Boyard, Firmax)', slug: 'low_quality', addition: '' },
+                { name: 'Средний вариант (Hettiich, Samsung)', slug: 'medium_quality', addition: '' },
+                { name: 'Премиум вариант (Blum)', slug: 'high_quality', addition: '' },
+                { name: 'Не знаю, нужна консультация', slug: 'idk_need_consultation', addition: '' },
             ],
+            slug: 'furniture',
+            img: 'img/chooseKitchenOptions/options_3/furniture.svg',
         },
         {
             title: 'Выберите материал фасадов',
@@ -80,6 +91,10 @@ const ChooseKitchen = () => {
         {
             title: 'Какой бюджет планируете?',
             options: [
+                { name: '60-90 тыс.', alt: '60_90_amount', slug: '60_90_amount', img: '' },
+                { name: '90-130 тыс.', alt: '90_130_amount', slug: '90_130_amount', img: '' },
+                { name: '130-180 тыс.', alt: '130_180_amount', slug: '130_180_amount', img: '' },
+                { name: 'Более 180 тыс.', alt: 'more_180_amount', slug: 'more_180_amount', img: '' },
             ],
         },
     ];
@@ -108,7 +123,12 @@ const ChooseKitchen = () => {
                 }
                 {
                     isShowOption([1, 3]) &&
-                    <ChooseOptionSelect />
+                    <ChooseOptionSelect
+                        options={options[indexOpenedView]}
+                        selectedOptions={selectedOptions}
+                        setSelectedOptions={setSelectedOptions}
+                        indexOpenedView={indexOpenedView}
+                    />
                 }
             </div>
 

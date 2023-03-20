@@ -1,0 +1,12 @@
+.choose_option_select {
+    display: flex;
+    justify-content: space-between;
+    .radio_div_kitchen_choose {
+        div {
+            margin: 0.5em 0;
+            label {
+                margin-left: 0.5em;
+            }
+        }
+    }
+}
