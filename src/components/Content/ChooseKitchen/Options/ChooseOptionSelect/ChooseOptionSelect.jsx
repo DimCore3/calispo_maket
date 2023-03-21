@@ -1,21 +1,13 @@
+import { useState } from 'react';
 import InputFile from '../../../../UI/InputFile/InputFile';
 import TextAreaForm from '../../../../UI/TextAreaForm/TextAreaForm';
 import './ChooseOptionSelect.scss'
 
 const ChooseOptionSelect = ({ options, selectedOptions, setSelectedOptions, indexOpenedView }) => {
+    const [textAreaValue, setTextAreaValue] = useState('');
 
     function clickRadio(e) {
-        let addition = e.target.getAttribute('addition');
-        setChoiseToList(Number(e.target.value));
-        if (addition === 'file') {
-            console.log('file')
-        };
-        if (addition === 'text') {
-            console.log('text')
-        };
-    }
-
-    function setChoiseToList(num) {
+        let num = Number(e.target.value);
         let result = selectedOptions;
         result[indexOpenedView] = num;
         setSelectedOptions([...result]);
@@ -42,7 +34,7 @@ const ChooseOptionSelect = ({ options, selectedOptions, setSelectedOptions, inde
                                 : null
                             }
                             {selectedOptions[indexOpenedView] === index & element.addition === 'text' 
-                                ? <TextAreaForm/>
+                                ? <TextAreaForm value={textAreaValue} setValue={setTextAreaValue} placeholder={element.placeholder}/>
                                 : null
                             }
                         </div>

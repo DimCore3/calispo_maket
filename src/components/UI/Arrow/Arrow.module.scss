@@ -1,0 +1,18 @@
+.arrow {
+    width: 20px;
+    height: 20px;
+    .line {
+        width: 100%;
+        height: 50%;
+        border-bottom: 2px black solid;
+    }
+    .corner {
+        height: 30%;
+        width: 30%;
+        rotate: 135deg;
+        position: relative;
+        bottom: 25%;
+        border-bottom: 2px black solid;
+        border-right: 2px black solid;
+    }
+}

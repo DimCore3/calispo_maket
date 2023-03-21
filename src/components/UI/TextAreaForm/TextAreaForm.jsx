@@ -1,14 +1,15 @@
 import classes from './TextAreaForm.module.scss'
 
-const TextAreaForm = () => {
+const TextAreaForm = ({placeholder, value, setValue}) => {
     return (
         <div className={classes.text_area_form}>
             <textarea 
-                placeholder='Укажите размеры кухни' 
+                placeholder={placeholder} 
                 rows="5" 
                 cols="30" 
                 name="text"
-                onChange={e => console.log(e.target.value)}    
+                value={value}
+                onChange={e => setValue(e.target.value)}    
             ></textarea>
         </div>
     );

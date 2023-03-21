@@ -1,8 +1,9 @@
+import Arrow from '../../../UI/Arrow/Arrow';
 import ButtonNext from '../../../UI/ButtonNext/ButtonNext';
 import ProgressBar from '../../../UI/ProgressBar/ProgressBar';
 import './ProgressBarAndButtons.scss';
 
-const ProgressBarAndButtons = ({ optionsLength, indexOpenedView, setIndexOpenedView }) => {
+const ProgressBarAndButtons = ({ optionsLength, indexOpenedView, setIndexOpenedView, selectedOptions }) => {
     const pagePercent = Math.round(100 / optionsLength);
 
     function previousPage() {
@@ -25,9 +26,18 @@ const ProgressBarAndButtons = ({ optionsLength, indexOpenedView, setIndexOpenedV
             <div className="content_buttons">
                 {
                     indexOpenedView !== 0 &&
-                    <button onClick={previousPage}>previous</button>
+                    <button className='previous_button' onClick={previousPage}><Arrow rotate={0} /></button>
                 }
-                <ButtonNext isEnable={true} action={nextPage}>Далее</ButtonNext>
+                <ButtonNext
+                    isEnable={selectedOptions[indexOpenedView] !== undefined}
+                    action={nextPage}>
+                        Далее
+                        <Arrow
+                            display={selectedOptions[indexOpenedView] !== undefined ? 'block' : 'none'}
+                            rotate={180}
+                            color={'white'}
+                        />
+                </ButtonNext>
             </div>
         </div>
     );
