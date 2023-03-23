@@ -6,11 +6,31 @@
         display: flex;
         gap: 1rem;
         .previous_button {
-            background-color: rgba($color: #000000, $alpha: 0.0);
+            background-color: rgba($color: #000000, $alpha: 0);
             border: none;
         }
         .previous_button:hover {
             cursor: pointer;
         }
+    }
+}
+
+.send_result_button {
+    button {
+        width: 145px;
+        height: 36px;
+        border-radius: 8px;
+        color: white;
+        background-color: #d91a00;
+        border: none;
+        cursor: pointer;    
+    }
+
+    strong {
+        font-size: medium;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
     }
 }

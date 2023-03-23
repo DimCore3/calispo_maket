@@ -15,16 +15,19 @@ h3 {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    min-width: 100px;
 }
 
 .closedDropDownMenu {
     transition: background-color 0.25s ease-in-out;
+    margin: 0 0.5rem;
 
     i {
         border: solid #b1b1b1;
         border-width: 0 2px 2px 0;
         display: inline-block;
-        padding: 3px;
+        padding: 2px;
+        margin-left: 8px;
     }
 }
 
@@ -40,21 +43,8 @@ h3 {
         color: #e4c69e;
     }
     i {
-        border: solid #e4c69e;
+        border-color: #e4c69e;
     }
-}
-
-.openedDropDownMenu {
-    .dropList {
-        @include menuOpened;
-    }
-    h3 {
-        color: #e4c69e;
-    }
-    div i {
-        border: solid #e4c69e;
-    }
-    transition: background-color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
 
 .titleDropList {
@@ -87,8 +77,4 @@ h3 {
             transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
         }
     }
-}
-
-.titleDropList:hover {
-    cursor: pointer;
 }

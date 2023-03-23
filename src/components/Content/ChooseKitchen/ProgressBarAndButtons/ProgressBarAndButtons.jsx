@@ -28,16 +28,26 @@ const ProgressBarAndButtons = ({ optionsLength, indexOpenedView, setIndexOpenedV
                     indexOpenedView !== 0 &&
                     <button className='previous_button' onClick={previousPage}><Arrow rotate={0} /></button>
                 }
-                <ButtonNext
-                    isEnable={selectedOptions[indexOpenedView] !== undefined}
-                    action={nextPage}>
-                        Далее
-                        <Arrow
-                            display={selectedOptions[indexOpenedView] !== undefined ? 'block' : 'none'}
-                            rotate={180}
-                            color={'white'}
-                        />
-                </ButtonNext>
+                {
+                    pagePercent * indexOpenedView !== 100
+                        ? <ButtonNext
+                            isEnable={selectedOptions[indexOpenedView] !== undefined}
+                            action={nextPage}>
+                            Далее
+                            <Arrow
+                                display={selectedOptions[indexOpenedView] !== undefined ? 'block' : 'none'}
+                                rotate={180}
+                                color={'white'}
+                            />
+                        </ButtonNext>
+                        : <div className='send_result_button'>
+                            <button onClick={() => {
+                                alert('Данные отправлены (нет)')
+                            }}><strong>Отправить</strong></button>
+                        </div>
+
+                }
+
             </div>
         </div>
     );

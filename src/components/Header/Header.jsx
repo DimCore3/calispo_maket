@@ -2,12 +2,12 @@ import HeaderContacts from "./HeaderContacts/HeaderContacts";
 import HeaderMenu from "./HeaderMenu/HeaderMenu";
 import HeaderPath from "./HeaderPath/HeaderPath";
 
-function Header() {
+function Header({isOpenedSearchInput, setIsOpenedSearchInput}) {
 
     return (
         <header className="main_header">
             <HeaderContacts/>
-            <HeaderMenu/>
+            <HeaderMenu isOpenedSearchInput={isOpenedSearchInput} setIsOpenedSearchInput={setIsOpenedSearchInput}/>
             <HeaderPath/>            
         </header>
     );

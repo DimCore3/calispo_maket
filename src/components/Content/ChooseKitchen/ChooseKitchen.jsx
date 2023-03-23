@@ -7,7 +7,7 @@ import ProgressBarAndButtons from './ProgressBarAndButtons/ProgressBarAndButtons
 const ChooseKitchen = () => {
     const [indexOpenedView, setIndexOpenedView] = useState(0);
     const [selectedOptions, setSelectedOptions] = useState([]);
-    
+
     let options = [
         {
             title: 'Выберите планировку кухни',
@@ -23,7 +23,7 @@ const ChooseKitchen = () => {
             title: 'Есть ли у вас размеры или проект будущей кухни?',
             options: [
                 { name: 'Да, есть проект', slug: 'thereIsProject', addition: 'file' },
-                { name: 'Есть размеры', slug: 'thereIsSize', addition: 'text', placeholder:'Укажите размеры кухни' },
+                { name: 'Есть размеры', slug: 'thereIsSize', addition: 'text', placeholder: 'Укажите размеры кухни' },
                 { name: 'Нет', slug: 'no', addition: '' },
                 { name: 'Просто интересно', slug: 'onlyInteresting', addition: '' },
             ],
@@ -87,8 +87,8 @@ const ChooseKitchen = () => {
         {
             title: 'Планируемая техника',
             options: [
-                { name: 'Встроенная', addition:'text', placeholder:'Перечислите наименования техники', alt: 'Include', slug: 'include_plan_tech', img: 'img/chooseKitchenOptions/options_8/included.svg' },
-                { name: 'Отдельностоящая', addition:'text', placeholder:'Перечислите наименования техники', alt: 'Standing nearby', slug: 'standing_nearby_plan_tech', img: 'img/chooseKitchenOptions/options_8/stanNearby.svg' },
+                { name: 'Встроенная', addition: 'text', placeholder: 'Перечислите наименования техники', alt: 'Include', slug: 'include_plan_tech', img: 'img/chooseKitchenOptions/options_8/included.svg' },
+                { name: 'Отдельностоящая', addition: 'text', placeholder: 'Перечислите наименования техники', alt: 'Standing nearby', slug: 'standing_nearby_plan_tech', img: 'img/chooseKitchenOptions/options_8/stanNearby.svg' },
                 { name: 'Еще не определились', alt: 'idk_plan_tech', slug: 'idk_plan_tech', img: 'img/chooseKitchenOptions/options_8/idkPlanTech.svg' },
             ],
         },
@@ -100,7 +100,7 @@ const ChooseKitchen = () => {
                 { name: '130-180 тыс.', alt: '130_180_amount', slug: '130_180_amount', img: '' },
                 { name: 'Более 180 тыс.', alt: 'more_180_amount', slug: 'more_180_amount', img: '' },
             ],
-        },
+        }
     ];
 
     function isShowOption(indexesWithOptionImgs) {
@@ -114,7 +114,11 @@ const ChooseKitchen = () => {
 
     return (
         <div className="choose_kitchen_root">
-            <h3>{options[indexOpenedView].title ?? ''}</h3>
+            {
+                options.length !== indexOpenedView
+                    ? <h3>{options[indexOpenedView].title ?? ''}</h3>
+                    : <h3>Результат</h3>
+            }
             <div className="choose_kitchen_content">
                 {
                     isShowOption([0, 2, 4, 5, 6, 7, 8, 9]) &&
@@ -133,6 +137,14 @@ const ChooseKitchen = () => {
                         setSelectedOptions={setSelectedOptions}
                         indexOpenedView={indexOpenedView}
                     />
+                }
+                {
+                    options.length === indexOpenedView &&
+                    <div>
+                        <p>
+                            {JSON.stringify(selectedOptions)}
+                        </p>
+                    </div>
                 }
             </div>
 

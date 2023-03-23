@@ -1,15 +1,21 @@
-import { useState } from 'react';
 import InputFile from '../../../../UI/InputFile/InputFile';
 import TextAreaForm from '../../../../UI/TextAreaForm/TextAreaForm';
 import './ChooseOptionSelect.scss'
 
 const ChooseOptionSelect = ({ options, selectedOptions, setSelectedOptions, indexOpenedView }) => {
-    const [textAreaValue, setTextAreaValue] = useState('');
 
     function clickRadio(e) {
         let num = Number(e.target.value);
         let result = selectedOptions;
-        result[indexOpenedView] = num;
+        result[indexOpenedView] = result[indexOpenedView] ?? {num: 0, additional: ''};
+        result[indexOpenedView].num = num
+        setSelectedOptions([...result]);
+    }
+
+    function changeAdditional(e) {
+        let result = selectedOptions;
+        result[indexOpenedView] = result[indexOpenedView] ?? {num: 0, additional: ''};
+        result[indexOpenedView].additional = e;
         setSelectedOptions([...result]);
     }
 
@@ -26,15 +32,15 @@ const ChooseOptionSelect = ({ options, selectedOptions, setSelectedOptions, inde
                                 name="choose_option_kitchen"
                                 value={index}
                                 addition={element.addition}
-                                defaultChecked={selectedOptions[indexOpenedView] === index}
+                                defaultChecked={selectedOptions[indexOpenedView]?.num === index}
                             />
                             <label htmlFor={element.slug}>{element.name}</label>
-                            {selectedOptions[indexOpenedView] === index & element.addition === 'file' 
+                            {selectedOptions[indexOpenedView]?.num === index & element.addition === 'file' 
                                 ? <InputFile/>
                                 : null
                             }
-                            {selectedOptions[indexOpenedView] === index & element.addition === 'text' 
-                                ? <TextAreaForm value={textAreaValue} setValue={setTextAreaValue} placeholder={element.placeholder}/>
+                            {selectedOptions[indexOpenedView]?.num === index & element.addition === 'text' 
+                                ? <TextAreaForm value={selectedOptions[indexOpenedView].additional ?? ''} setValue={changeAdditional} placeholder={element.placeholder}/>
                                 : null
                             }
                         </div>
