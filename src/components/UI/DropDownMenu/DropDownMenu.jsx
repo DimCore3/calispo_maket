@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import classes from './dropDownMenu.module.scss'
 
-function DropDownMenu({ name, IncludedComponent }) {
+function DropDownMenu({ name, children }) {
     let [isDropListShow, setIsDropListShow] = useState(false)
 
     return (
@@ -11,7 +11,7 @@ function DropDownMenu({ name, IncludedComponent }) {
                 <div className={classes.arrow}><i className={isDropListShow ? classes.arrow_down : classes.arrow_right}></i></div>
             </div>
             <div className={classes.dropList}>
-                {isDropListShow && IncludedComponent}
+                {isDropListShow && children}
             </div>
         </div>
     );

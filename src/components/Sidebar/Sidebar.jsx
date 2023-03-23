@@ -3,7 +3,7 @@ import ListMenu from "../UI/ListMenu/ListMenu";
 import Parameters from "../UI/Parameters/Parameters";
 import './sidebar.scss';
 
-function Sidebar() {
+function Sidebar() {    
     const sidebarList = [
         {
             name: 'Кухни',
@@ -37,21 +37,17 @@ function Sidebar() {
     return (
         <div className="sidebar">
             {sidebarList.map((element, index) =>
-                <DropDownMenu
-                    name={element.name}
-                    key={element.slug + '_' + index}
-                    IncludedComponent={<ListMenu slug={element.slug} />}
-                />
+                <DropDownMenu name={element.name} key={element.slug + '_' + index}> 
+                    <ListMenu slug={element.slug} /> 
+                </DropDownMenu>
             )}
             <div className="parameter_title">
                 <h3>Подбор параметров</h3>
             </div>
             {parametersList.map((element, index) =>
-                <DropDownMenu
-                    name={element.name}
-                    key={element.slug + '_' + index}
-                    IncludedComponent={<Parameters slug={element.slug} />}
-                />
+                <DropDownMenu name={element.name} key={element.slug + '_' + index}>
+                    <Parameters slug={element.slug} />
+                </DropDownMenu>
             )}
         </div>
     );

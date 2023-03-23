@@ -82,6 +82,33 @@ function Parameters() {
                         type="range"
                     />
                 </section>
+                <div className={classes.scale_pointer}>
+                    <div>
+                        <p>|</p>
+                        <p>{min}</p>
+                    </div>
+                    <div>
+                        <p>|</p>
+                    </div>
+                    <div>
+                        <p>|</p>
+                        <p>{Math.round(max / 3)}</p>
+                    </div>
+                    <div>
+                        <p>|</p>
+                    </div>
+                    <div>
+                        <p>|</p>
+                        <p>{Math.round((max / 3) * 2)}</p>
+                    </div>
+                    <div>
+                        <p>|</p>
+                    </div>
+                    <div>
+                        <p>|</p>
+                        <p>{max}</p>
+                    </div>
+                </div>
             </div>
         </div>
     );
